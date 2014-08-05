@@ -1,6 +1,6 @@
 #Student Directory
 
-##Application Description
+##General Description
 
 The student directory is a fully functional ruby script for managing the list of students enrolled in different courses (aka "cohorts") at Makers Academy.
 
@@ -9,7 +9,7 @@ The purpose of this script is to enable users to create a list of enrolled stude
 This version was written (mostly) according to TDD methodology.
 
 
-##General Instructions
+##Application & Testing
 
 The program runs in terminal (ruby must be installed).
 
