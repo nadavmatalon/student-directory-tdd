@@ -1,4 +1,3 @@
-
 #Student Directory
 
 ##Application Description
@@ -7,14 +6,27 @@ The student directory is a fully functional ruby script for managing the list of
 
 The purpose of this script is to enable users to create a list of enrolled students, add various details about them (first name, last name, cohort month & cohort year), edit and remove entries as needed, as well as load & save the list in an independent csv file.
 
-This version of the code was written as an exercise in TDD (Test Driven Development), that is, writing the tests first and the actual code to match. However, it should be noted that some additions to the code were done in the traditional manner due to time constraints.
+This version was written (mostly) according to TDD methodology.
 
 
 ##General Instructions
 
-The script runs in terminal (ruby must be installed).
+The program runs in terminal (ruby must be installed).
 
-When first running the script, the list of students will automatically be loaded from the relevant csv file if the latter exists (see "Save student List" & "Load student list" below for more details). 
+To run in terminal: 
+ 	$ irb
+ 	$ require './lib/studentDirectory.rb'
+	$ program_startup
+
+To run the tests:
+	$ rspec
+
+(Rspec version: 3.0.3)
+
+
+##Functional Description
+
+When first running the program, the list of students will automatically be loaded from the relevant csv file if the latter exists (see "Save student List" & "Load student list" below for more details). 
 
 If the file doesn't exit - the program creates a new file automatically in the same folder and notifies the user.
 

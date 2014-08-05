@@ -1,5 +1,9 @@
-require 'csv'
+# To run in terminal: 
+# 	$ irb
+#   $ require './lib/studentDirectory.rb'
+# 	$ program_startup
 
+require 'csv'
 
 def program_startup
 
@@ -45,7 +49,6 @@ end
 
 
 def student_list 
-
 	@student_list ||= []
 end
 
@@ -80,7 +83,6 @@ def add_student_to_list(student_details)
 		student_list.sort_by! {|student| student[:first_name]}
 	end
 end
-
 
 
 def input_new_student
@@ -178,7 +180,6 @@ end
 
 
 def clear_student_list
-
 	@student_list.clear
 end
 
@@ -195,7 +196,6 @@ def load_list_from_file (file_name)
 			student_list << {:first_name => first_name, :last_name => last_name, :cohort => cohort.to_sym, :year => year.to_i}
   		end
 		file.close
-
 		if (@student_list.length == 0)
 			print "\nStudent list file is empty - No data was loaded.\n"
 		else
@@ -225,13 +225,11 @@ end
 
 
 def get_input_from_user
-
 	STDIN.gets.chomp
 end
 
 
 def incorrect_input_prompt
-
 	print "\nSorry, incorrect input - Please try again.\n"
 end
 
@@ -274,17 +272,11 @@ end
 def print_student_list
 
 	print "\nPlease select one of the following print options:\n" 
-
 	print "0. Complete list\n" 
-
 	print "1. Filter list by initial letter of first name\n" 
-
 	print "2. Filter list by max number of letters in first name\n"
-
  	user_print_selection = gets.chomp
-
  	case (user_print_selection)
-
  		when ("0")
  				print_entire_list
  		when ("1")
@@ -309,7 +301,6 @@ end
 def print_all_students
 
 	student_list.each.with_index(1) do |student, index|
-
 		print "#{index}. #{student[:first_name]} #{student[:last_name]} (#{student[:cohort]} #{student[:year]})\n"
 	end
 end
@@ -318,25 +309,18 @@ end
 def filter_by_initial_letter
 
 	print "\nPlease type in a letter:\n" 
-
 	filter_letter = gets.chomp
-
 	filter_letter.capitalize!
-
 	if !(("A".."Z") === filter_letter)
 
 		incorrect_input_prompt
 		filter_by_initial_letter
 	end
-
 	print_list_header
-
 	selected_students = student_list.select {|student| student[:first_name].start_with?(filter_letter)}
-
 	selected_students.each.with_index(1) do |student, index|
 		print "#{index}. #{student[:first_name]} #{student[:last_name]} (#{student[:cohort]} #{student[:year]})\n"
 	end
-
 	print_student_count
 end
 
@@ -344,23 +328,16 @@ end
 def filter_by_number_of_letters
 
    	print "\nPlease input maximum number of letters in first name:\n"     
-
     filter_number = gets.chomp
-
    	if !(("1".."100000") === filter_number)
-
 		incorrect_input_prompt
 		filter_by_number_of_letters
 	end
-
 	print_list_header
-
 	selected_students = student_list.select {|student| student[:first_name].length <= filter_number.to_i}
-
 	selected_students.each.with_index(1) do |student, index|
 		print "#{index}. #{student[:first_name]} #{student[:last_name]} (#{student[:cohort]} #{student[:year]})\n"
 	end
-
 	print_student_count
 end
 
@@ -406,33 +383,28 @@ end
 
 
 def exit_program
-
 	save_before_exit_query
 	exit
 end
 
 
 def edit_first_name(student_number, new_data)
-
 	student_list[student_number][:first_name] = new_data
 
 end
 
 
 def edit_last_name(student_number, new_data)
-
 	student_list[student_number][:last_name] = new_data
 
 end
 
 def edit_cohort(student_number, new_data)
-
 	student_list[student_number][:cohort] = new_data.to_sym
 end
 
 
 def edit_year(student_number, new_data)
-
 	student_list[student_number][:year] = new_data.to_i
 end
 
@@ -443,9 +415,7 @@ def edit_student_details
 	print_all_students
 	student_number = (select_student_for_editing - 1)
 	type_of_data = select_type_of_data_to_edit
-
 	case (type_of_data)
-
 		when ("new_first_name")
 			print "\nPlease enter new first name:\n"
 			new_first_name = gets.chomp
@@ -457,7 +427,6 @@ def edit_student_details
 				new_first_name.capitalize!
 			end
 			edit_first_name(student_number, new_first_name)	
-
 		when ("new_last_name")
 			print "\nPlease enter new last name:\n"
 			new_last_name = gets.chomp
@@ -469,7 +438,6 @@ def edit_student_details
 				new_last_name.capitalize!
 			end
 			edit_last_name(student_number, new_last_name)
-
 		when ("new_cohort")
 			new_cohort = get_cohort
 			while (!is_month?(new_cohort))
@@ -480,8 +448,7 @@ def edit_student_details
 					new_cohort = get_cohort
 				end
 			end
-			edit_cohort(student_number, new_cohort)
-	
+			edit_cohort(student_number, new_cohort)	
 		when ("new_year")
 			print "\nPlease enter new year:\n"
 			print "(click 'enter' for current year)\n"
@@ -515,11 +482,8 @@ def select_student_for_editing
 
 	print "\nPlease enter student number for editing:\n" 
 	print "(click 'enter' to re-print student list)\n"
-
 	student_count = student_list.length
-
 	user_selection = gets.chomp
-
 	if ((1..student_count) === user_selection.to_i)
 		return user_selection.to_i
 	elsif (user_selection == "")
@@ -561,7 +525,6 @@ def delete_student
 	student_number = (select_student_for_deleting - 1)
 	print_student_details_before_deleting (student_number)
 	user_verification = get_delete_verification
-
 	if (user_verification)
 		remove_student_from_list(student_number)
 		print "\nStudent deleted from list\n\n"
@@ -575,11 +538,8 @@ def select_student_for_deleting
 
 	print "\nPlease enter student number for deletion:\n" 
 	print "(click 'enter' to re-print student list)\n"
-
 	student_count = student_list.length
-
 	user_selection = gets.chomp
-
 	if ((1..student_count) === user_selection.to_i)
 		return user_selection.to_i
 	elsif (user_selection == "")
@@ -621,12 +581,7 @@ end
 
 
 def remove_student_from_list(student_number)
-
 	student_list.delete_at(student_number)
-
 end
-
-
-program_startup
 
 

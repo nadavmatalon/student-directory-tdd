@@ -3,24 +3,20 @@ require "studentDirectory.rb"
 describe "Student Directory" do 
 
 	it 'knows to add a new student to the list' do
-
 		student_A = collect_student_details("Abi","Potato","May","2014")
 		expect(add_student_to_list(student_A)).to eq student_list
 	end
 
 	it 'knows NOT to add new student to list if first_name is blank' do
-
 		student_A = collect_student_details("","Potato","May","2014")
 		expect(add_student_to_list(student_A)).to eq nil
 	end
 
 	it 'how to create the student list if it doesn\'t already exist' do
-
 		expect(student_list).to eq []
 	end
 
 	it 'knows how to add more than one student to the student list' do
-
 		student_A = collect_student_details("Alex","Guyava","May","2014")
 		student_B = collect_student_details("Kathy","Mango","June","2015")
 		add_student_to_list(student_A)
@@ -35,7 +31,6 @@ describe "Student Directory" do
 	end
 
 	it 'automatically sets default year to current year if no value given' do
-
 		student_A = collect_student_details("Alex","Guyava","May","")
 		add_student_to_list(student_A)
 		expect(student_list.first[:year]).to eq (Time.now.strftime("%Y")).to_i 
@@ -43,23 +38,18 @@ describe "Student Directory" do
 	end
 
 	it 'automatically capitalizes first name if not alreay capitalized' do
-
 		student_A = collect_student_details("alex","Guyava","May","2014")
 		add_student_to_list(student_A)
 		expect(student_list.first[:first_name]).to eq "Alex"
- 
 	end
 
 	it 'automatically capitalizes last name if not alreay capitalized' do
-
 		student_A = collect_student_details("alex","apple","May","2014")
 		add_student_to_list(student_A)
 		expect(student_list.first[:last_name]).to eq "Apple"
- 
 	end
 
 	it 'sorts list alphabetically according to first name with every new entry' do
-
 		student_A = collect_student_details("Roi","Papaya","May","2014")
 		student_B = collect_student_details("alex","apple","May","2014")
 		student_C = collect_student_details("Kathy", "Mango", "June", "2015")
@@ -70,25 +60,19 @@ describe "Student Directory" do
 	end	
 
 	it 'knows if student_list.csv file doesn\'t exists' do
-
 		file_name = "test_list.csv"
 		File.delete(file_name) if File.file?(file_name)
-		expect(file_available?(file_name)).to be_false
-
+		expect(file_available?(file_name)).to be false
 	end
 
 	it 'knows if student_list.csv file already exists' do
-
 		file_name = "test_list.csv"
 		File.new(file_name, "a")		
-		expect(file_available?(file_name)).to be_true
+		expect(file_available?(file_name)).to be true
 		File.delete(file_name)
-
-
 	end
 
 	it 'knows how to save student list into csv file' do
-
 		file_name = "test_list.csv"
 		student_A = collect_student_details("Alex","Apple","May","2014")
 		student_B = collect_student_details("Roi","Papaya","May","2014")
@@ -107,7 +91,6 @@ describe "Student Directory" do
 	end
 
 	it 'knows how to load student list from file' do
-
 		file_name = "test_list.csv"
 		student_A = collect_student_details("Alex","Apple","May","2014")
 		student_B = collect_student_details("Roi","Papaya","May","2014")
@@ -122,7 +105,6 @@ describe "Student Directory" do
 
 
 	it "knows how to print the main menu in terminal" do
-
 		l1 = "Please select one of the following options:"
 		l2 = "1. Add new students to list"
 		l3 = "2. Show list of students"
@@ -137,9 +119,7 @@ describe "Student Directory" do
 		print_main_menu
 	end
 
-
 	it "knows how to take input from the user" do
-
 		expect(STDIN).to receive(:gets).and_return("")
 		get_input_from_user
 	end
@@ -195,7 +175,6 @@ describe "Student Directory" do
 
 
 	it "knows how to remove a student from list" do
-
 		student_A = collect_student_details("Roi","Papaya","May","2014")
 		student_B = collect_student_details("alex","apple","May","2014")
 		student_C = collect_student_details("Kathy", "Mango", "June", "2015")
