@@ -14,17 +14,17 @@
 
 <table>
 	<tr>
-		<td align="center" width="230px">
+		<td align="center" width="210px">
 			<a href="https://raw.githubusercontent.com/nadavmatalon/student-directory-tdd/master/images/student_directory_1.jpg">
 				<img src="images/student_directory_1.jpg" height="110px" /><br/>
 			</a>
 		</td>
-		<td align="center" width="230px">
+		<td align="center" width="210px">
 			<a href="https://raw.githubusercontent.com/nadavmatalon/student-directory-tdd/master/images/student_directory_2.jpg">
 				<img src="images/student_directory_2.jpg" height="110px" /><br/>
 			</a>
 		</td>
-		<td align="center" width="230px">
+		<td align="center" width="210px">
 			<a href="https://raw.githubusercontent.com/nadavmatalon/student-directory-tdd/master/images/student_directory_3.jpg">
 				<img src="images/student_directory_3.jpg" height="110px" /><br/>
 			</a>
@@ -189,6 +189,8 @@ As before, the script is configured to accept various affirmative/negative answe
 
 
 ###How to Run
+
+Clone the repo to a local folder and run:
 
 ```
 $> cd student-directory
