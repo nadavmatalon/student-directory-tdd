@@ -1,4 +1,4 @@
-#Student Directory ([TDD](http://en.wikipedia.org/wiki/Test-driven_development))
+#Student Directory [TDD](http://en.wikipedia.org/wiki/Test-driven_development)
 
 ## Table of Contents
 
