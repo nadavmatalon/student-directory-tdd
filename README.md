@@ -74,6 +74,8 @@ Subsequently, the user is presented with a main menu containing the following op
 
 	5. Clear student list
 
+	6. Edit student details
+
 	9. Exit program
 
 To select one of these options, the user needs to enter the relevant option-number 
@@ -175,6 +177,14 @@ The script will ask users to confirm this operation prior to execution.
 
 In this context, the script is configured to accept various afermative/negative 
 answers from users (i.e. "Yes", "yes", "YES", "Y", "y" and their negative equivalents).
+
+
+####6. Edit student details
+
+Users can edit the details of a particular student by selecting this option.
+
+The script will ask users to select a student from the existing list and then 
+proceed to allow changing of their first-name, last name, cohort month, and year.
 
 
 ####9. Exit program
