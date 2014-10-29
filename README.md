@@ -47,7 +47,7 @@ The purpose of this code is to enable users to manage the list of students enrol
 in different courses (aka "cohorts") at [Makers Academy](http://www.makersacademy.com/).
 
 
-###How to Run
+##How to Run
 
 Clone the repo to a local folder and run:
 
@@ -214,13 +214,12 @@ As before, the script is configured to accept various affirmative/negative answe
 
 Tests were written with [Rspec](http://rspec.info/) (3.1.7).
 
-To run the testing suite in terminal: 
+To run the tests in terminal: 
 
 ```bash
 $> cd student-directory-tdd
 $> rspec
 ```
-
 
 ##License
 
