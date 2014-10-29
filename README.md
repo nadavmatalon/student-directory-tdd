@@ -54,7 +54,7 @@ Clone the repo to a local folder and run:
 ```
 $> cd student-directory
 $> irb
->> require './student-directory.rb'
+>> require './lib/studentDirectory.rb'
 >> program_startup
 ```
 
