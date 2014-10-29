@@ -52,7 +52,7 @@ in different courses (aka "cohorts") at [Makers Academy](http://www.makersacadem
 Clone the repo to a local folder and run:
 
 ```
-$> cd student-directory
+$> cd student-directory-tdd
 $> irb
 >> require './lib/studentDirectory.rb'
 >> program_startup
