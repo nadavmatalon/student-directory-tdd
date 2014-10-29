@@ -35,7 +35,7 @@
 
 ##General Description
 
-This code was written in [Ruby](https://www.ruby-lang.org/en/)(2.1.1) 
+This code was written in [Ruby](https://www.ruby-lang.org/en/) (2.1.1) 
 using [TDD](http://en.wikipedia.org/wiki/Test-driven_development) methodology.
 
 The code was written during week 2 of the course at 
