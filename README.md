@@ -4,8 +4,8 @@
 
 * [Screenshots](#screenshots)
 * [General Description](#general-description)
-* [Functional Description](#functional-description)
 * [How to Run](#how-to-run)
+* [Functional Description](#functional-description)
 * [Testing](#testing)
 * [License](#license)
 
@@ -35,16 +35,28 @@
 
 ##General Description
 
-This code was is a __re-write from scratch__ of the original 
-[Student Directory](https://github.com/nadavmatalon/student-directory) code 
+This code was written in [Ruby](https://www.ruby-lang.org/en/)(2.1.1) 
 using [TDD](http://en.wikipedia.org/wiki/Test-driven_development) methodology.
 
-The corrent code was written during week 2 of the course at 
-[Makers Academy](http://www.makersacademy.com/).
+The code was written during week 2 of the course at 
+[Makers Academy](http://www.makersacademy.com/), 
+and it consists of a __re-write from scratch__ of the original 
+[Student Directory](https://github.com/nadavmatalon/student-directory) code 
 
-The purpose of the app is to manage the list of students enrolled in different courses 
-(aka "cohorts") at [Makers Academy](http://www.makersacademy.com/).
+The purpose of this code is to enable users to manage the list of students enrolled 
+in different courses (aka "cohorts") at [Makers Academy](http://www.makersacademy.com/).
 
+
+###How to Run
+
+Clone the repo to a local folder and run:
+
+```
+$> cd student-directory
+$> irb
+>> require './student-directory.rb'
+>> program_startup
+```
 
 ##Functional Description
 
@@ -198,21 +210,9 @@ As before, the script is configured to accept various affirmative/negative answe
 ("Yes", "yes", "YES", "Y", "y" and their negative equivalents).
 
 
-###How to Run
-
-Clone the repo to a local folder and run:
-
-```
-$> cd student-directory
-$> irb
->> require './student-directory.rb'
->> program_startup
-```
-
-
 ##Testing
 
-Tests were written with [Rspec](http://rspec.info/) (3.0.3).
+Tests were written with [Rspec](http://rspec.info/) (3.1.7).
 
 To run the testing suite in terminal: 
 
